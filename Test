@@ -1,0 +1,22 @@
+/**
+ * Created by 44020369 on 7/27/2017.
+ */
+public class Test {
+    public static void main(String[] args){
+        String s = "hello world";
+        System.out.println(s.length());
+        char result = s.charAt(5);
+        System.out.println(result);
+        int fact = factorial(3);
+        System.out.println(fact);
+
+    }
+    public static int factorial(int n){
+        if (n == 1){
+            return 1;
+        }
+        else{
+            return n * factorial(n-1);
+        }
+    }
+}
