@@ -1,0 +1,81 @@
+package Assignment;
+
+import sun.plugin2.message.JavaScriptCallMessage;
+
+import java.util.Scanner;
+
+/**
+ * Created by 44020369 on 10/17/2017.
+ */
+public class pigLatin {
+
+    public static void main(String a[]){
+        System.out.println("Welcome to PigLatin Translator\n");
+
+        pigLatin pigOb = new pigLatin();
+        //String text = pigOb.textInput();
+        pigOb.translate(pigOb.textInput());
+    }
+
+    String textInput(){
+        System.out.println("Enter your text to translate ");
+        Scanner scob = new Scanner(System.in);
+        String textInput = scob.nextLine();
+        return textInput;
+
+    }
+    void translate(String text){
+        String outputText="Code failure. Please check.";
+        String vowel = "AEIOUaeiou",vowelY="AEIOUYaeiouy";
+
+        //if (text.charAt(0) == 'A' || text.charAt(0) == 'E' || text.charAt(0) == 'O' || text.charAt(0) == 'I' || text.charAt(0) == 'U'){
+        if ( vowel.indexOf(text.charAt(0)) != -1   ){
+            System.out.println(text);
+            if (Character.isUpperCase(text.charAt(text.length()-1)) == true) {
+                outputText = text + "WAY";
+            }
+            else if(Character.isUpperCase(text.charAt(text.length()-1)) == false){
+                outputText = text + "way";
+            }
+       }
+       else if ( vowel.indexOf(text.charAt(0)) == -1 && (text.indexOf("Y") != -1 || text.indexOf("y") != -1 )){
+           int yIndex=0;
+            if (text.indexOf("Y") != -1){
+                yIndex=text.indexOf("Y");
+            }
+            else if (text.indexOf("y") != -1){
+                yIndex=text.indexOf("y");
+            }
+
+            String befY = text.substring(0,yIndex);
+
+            String aftY = text.substring(befY.length(),text.length()) ;
+            System.out.println("Text before Y : " + befY);
+            System.out.println("Text after Y : " + aftY);
+            String textNew = aftY + befY;
+            if (Character.isUpperCase(textNew.charAt(textNew.length()-1)) == true){
+                outputText = textNew + "AY";
+            }
+            else if (Character.isUpperCase(textNew.charAt(textNew.length()-1)) == false) {
+                outputText = textNew + "ay";
+            }
+
+        }
+        else if ( vowel.indexOf(text.charAt(0)) == -1){
+            if (Character.isUpperCase(text.charAt(text.length()-1)) == true) {
+                outputText = text + "AY";
+            }
+            else if(Character.isUpperCase(text.charAt(text.length()-1)) == false){
+                outputText = text + "ay";
+            }
+        }
+        else if ( vowel.indexOf(text.charAt(0)) == -1 && (text.indexOf("A") != -1 || text.indexOf("a") != -1 || text.indexOf("E") != -1 || text.indexOf("e") != -1
+                                                         || text.indexOf("I") != -1) || text.indexOf("i") != -1 || text.indexOf("O") != -1 || text.indexOf("o") != -1
+                                                          || text.indexOf("U") != -1 || text.indexOf("u") != -1){
+
+        }
+        System.out.println(outputText);
+
+    }
+
+}
