@@ -1,6 +1,6 @@
 package Assignment;
 
-import sun.plugin2.message.JavaScriptCallMessage;
+//import sun.plugin2.message.JavaScriptCallMessage;
 
 import java.util.Scanner;
 
@@ -24,22 +24,42 @@ public class pigLatin {
         return textInput;
 
     }
+
+    public static vowelIndex vowelIndex(String s){
+
+        String vowelCap = "AEIOU";
+        String vowelSmall = "aeiou";
+        for(int i = 0 ; i <= s.length()-1; i ++){
+
+            if(vowelCap.contains(String.valueOf(s.charAt(i)))){
+                return new vowelIndex(i,'c');
+            }
+            else if (vowelSmall.contains(String.valueOf(s.charAt(i)))){
+                return new vowelIndex(i,'s');
+            }
+
+        }
+        return new vowelIndex(-1,'s');
+    }
     void translate(String text){
         String outputText="Code failure. Please check.";
-        String vowel = "AEIOUaeiou",vowelY="AEIOUYaeiouy";
+        String vowel = "AEIOUaeiou";
 
         //if (text.charAt(0) == 'A' || text.charAt(0) == 'E' || text.charAt(0) == 'O' || text.charAt(0) == 'I' || text.charAt(0) == 'U'){
         if ( vowel.indexOf(text.charAt(0)) != -1   ){
             System.out.println(text);
+            System.out.println("Case 1 : word starts with a vowel.");
             if (Character.isUpperCase(text.charAt(text.length()-1)) == true) {
                 outputText = text + "WAY";
             }
             else if(Character.isUpperCase(text.charAt(text.length()-1)) == false){
                 outputText = text + "way";
             }
-       }
-       else if ( vowel.indexOf(text.charAt(0)) == -1 && (text.indexOf("Y") != -1 || text.indexOf("y") != -1 )){
-           int yIndex=0;
+        }
+        else if ( vowel.indexOf(text.charAt(0)) == -1 && (text.indexOf("Y") != -1 || text.indexOf("y") != -1 )){
+            System.out.println("Case 2 : Word starts with a consonant, and has Y in the word");
+
+            int yIndex=0;
             if (text.indexOf("Y") != -1){
                 yIndex=text.indexOf("Y");
             }
@@ -59,9 +79,10 @@ public class pigLatin {
             else if (Character.isUpperCase(textNew.charAt(textNew.length()-1)) == false) {
                 outputText = textNew + "ay";
             }
-
         }
-        else if ( vowel.indexOf(text.charAt(0)) == -1){
+
+        else if ( vowel.indexOf(text.charAt(0)) == -1 && text.matches(".*[AEIOUaeiou].*") == false){
+            System.out.println("Case 3 : Starts with a consonant and as no vowel or Y in it.");
             if (Character.isUpperCase(text.charAt(text.length()-1)) == true) {
                 outputText = text + "AY";
             }
@@ -69,12 +90,29 @@ public class pigLatin {
                 outputText = text + "ay";
             }
         }
-        else if ( vowel.indexOf(text.charAt(0)) == -1 && (text.indexOf("A") != -1 || text.indexOf("a") != -1 || text.indexOf("E") != -1 || text.indexOf("e") != -1
-                                                         || text.indexOf("I") != -1) || text.indexOf("i") != -1 || text.indexOf("O") != -1 || text.indexOf("o") != -1
-                                                          || text.indexOf("U") != -1 || text.indexOf("u") != -1){
+        else if ( vowel.indexOf(text.charAt(0)) == -1 && text.matches(".*[AEIOUaeiou].*") == true){
+            System.out.println("Case 4: Start with consonant and has a vowel in it.");
 
+            vowelIndex vowelIndexobj = vowelIndex(text);
+            int indexval = vowelIndex.getIndexVal();
+            char caseVal = vowelIndex.getCaseVal();
+
+            String bef = text.substring(0,indexval);
+            String aft = text.substring(bef.length(),text.length()) ;
+
+            System.out.println("Text before vowel : " + bef);
+            System.out.println("Text after vowel : " + aft);
+
+            String textNew = aft + bef;
+            if (caseVal == 'c' || Character.isUpperCase(textNew.charAt(textNew.length()-1)) == true  ){
+                outputText = textNew + "AY";
+            }
+            else if (caseVal == 's'  || Character.isUpperCase(textNew.charAt(textNew.length()-1)) == false) {
+                outputText = textNew + "ay";
+            }
         }
         System.out.println(outputText);
+
 
     }
 
