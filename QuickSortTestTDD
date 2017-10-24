@@ -1,0 +1,37 @@
+package Assignment;
+
+import static org.junit.Assert.*;
+
+public class QuickSortTestTDD {
+    @org.junit.Test
+    public void quickSortInput() throws Exception {
+        //fail("Failed");
+    }
+
+    @org.junit.Test
+    public void printArray() throws Exception {
+        int arr[] = {4,2,1,5} ;
+        //int arr1[] = {4,2,12,5} ;
+        QuickSort QuicksortObj = new QuickSort();
+        QuicksortObj.printArray(arr);
+        //ssertArrayEquals(arr,QuicksortObj.printArray(arr));
+    }
+
+
+
+    @org.junit.Test
+    public void findPivot() throws Exception {
+        int arr[] = {1,23,55,12,34};
+        QuickSort quickSort = new QuickSort();
+        assertEquals(0, quickSort.findPivot(arr,"L"));
+    }
+
+    @org.junit.Test
+    public void partition() throws Exception {
+    }
+
+    @org.junit.Test
+    public void sort() throws Exception {
+    }
+
+}
