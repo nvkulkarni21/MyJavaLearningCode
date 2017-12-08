@@ -1,0 +1,210 @@
+
+
+No. 
+
+
+Exercise 
+
+
+Key Skills 
+
+
+10 
+FizzBuzz: Write a program that prints the numbers from 1 to 100.
+
+But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”.
+
+For numbers which are multiples of both three and five print “FizzBuzz”.
+ Java Basics 
+20 
+Piglatin: Write a program to convert an input string from English to Piglatin.
+
+Use the "rules" for constructing Piglatin given on snowcrest.net to perform the conversion.
+ Java Basics, Strings 
+30 
+Factorial: A factorial of a positive integer N is written as N! = N * (N-1)!
+
+1! = 1 and 0! = 1.
+
+Write a program to compute the factorial of a input positive integer.
+ Java Basics, Recursion 
+40 
+
+Testing Pascal's Triangle: Write a program to print Pascal's Triangle for a specified (input) number of rows.
+
+Click on the image to view a sample Pascal's Triangle.
+
+
+
+Consider how you will test that your program is correct and ensure that you've written test(s) to demonstrate correctness.
+ 
+ 
+
+ 
+
+Java Basics, TDD
+ 
+50 
+(star) Quicksort: Write a program to sort a provided list of integers.
+
+Use the algorithm described on http://me.dt.in.th/page/Quicksort/
+ 
+Java Basics, Analysis,
+
+Problem-Solving
+ 
+60 
+
+(star) Fuzzy Match INTERNAL: Using the provided xlsm file and its VBA code as a basis,
+
+implement the FuzzyPercent VBA function in Java. Restrict yourself to implementing FuzzyPercent as if
+
+it has been called with Algorithm = 3 and Normalised = False.
+
+The point of FuzzyPercent is to return a percent value after comparing two strings using a "fuzzy match" algorithm.
+
+Comparing two identical strings should yield 100% or 1.0, with the result becoming smaller and smaller
+
+as the strings become more and more different. Examples are given in the attached spreadsheet.
+
+♦ fuzzy.xlsm
+ 
+Java Basics, Strings,
+
+Analysis, Problem-Solving
+ 
+70 
+What Day Is That? Without using java 8's (or Java 6's!) Calendar API, write a function (or method) in Java to determine the day of
+week a given date falls on.
+You can use this algorithm (https://dzone.com/articles/algorithm-week-how-determine) for reference.
+
+e.g., Given a date 27 May 1991 your program should output that it was a Monday.
+Similarly for 25 Dec 2061 your program should say it is a Sunday.
+
+Remember to write tests.
+ 
+Analysis, Problem Solving
+
+Dates and Times
+ 
+80 
+
+Year Calendar: Using the Date/Time API in Java 8, write a program that takes a year (e.g., 2002) as input,
+and print out a year's calendar for that year.
+
+Your output should look like the attached file: cal2002.txt, which shows the output when the input is 2002.
+ 
+Analysis, Problem Solving,
+
+Dates and Times
+ 
+90 
+(star) Simple Arithmetic Expression Evaluator: Write a program that accepts from the user an arithmetic expression with the following constraints:
+•the user will only enter positive integers
+•the user will only do these operations: + - * / (i.e., + = add, - = subtract, * = multiply, / = divide)
+•The precedence of * and / are higher than + and - (as is the case in traditional school maths)
+•The * and / operators have the same precedence, + and - have the same precedence
+•for simplicity, all numbers and operators will be separated by exactly one space
+
+Your program should evaluate, compute and print the input expression.
+
+e.g. if the input is "25 / 2 + 5 / 2" you should print 15
+e.g. if the input is "25 - 2 - 3 + 10" you should print 30
+e.g. if the input is "12 - 3 * 4 + 2" you should print 2
+
+You can ignore error-handling.
+Assume erroneous input (e.g. "17 * 3 + 14 /") will NOT be entered.
+
+Ensure you write tests to ensure that your expression evaluator works.
+ 
+Analysis, Problem Solving,
+
+Java Collections
+ 
+100 
+Find Email Addresses.
+Write a program where the user can input a filename (which is a text file)
+Read the text file specified by the user and all email the addresses in it
+and print those email addresses on the screen.
+
+Make reasonable assumptions about what constitutes an email address.
+
+Handle the most common errors, e.g. user specifies a non-existent file,
+or a file you cannot read (e.g. it's locked or otherwise inaccessible to you),
+and any other error conditions that you think are relevant.
+ 
+Java File Handling,
+
+Regular Expressions,
+
+Exceptions
+ 
+120 
+Track Appends.
+Write a program where the user can specify a filename (which is a text file).
+
+The program should display the last 10 lines of the file and track the file so that
+if additional text is appended to the file, it prints the additional text.
+
+This should continue until the user terminates the program (e.g. by pressing Ctrl+C).
+
+Ensure that you handle relevant errors.
+ 
+Java File Handling,
+
+Exceptions
+ 
+130 
+
+Histogram from Log Data.
+
+INTERNAL Consider the provided zip archive of HSBC logs.
+These are INTERNAL so work on this problem only on HSBC computers!
+
+♦ Model-Logs.zip
+
+Unzip and read these files and perform the following analysis.
+
+Part 1. Make a histogram of all log entries on a per-hour, per-day basis.
+e.g. on 6 Sep between 00:00 & 01:00 we had xxx alerts. on 6 Sep between 01:00 & 02:00 we had yyy alerts....
+and on 6 Sep between 23:00 & 00:00 we had zzz alerts.... similarly for 7 Sep. etc.
+
+To make the histogram, you can produce CSV output from your program, which when input into Excel, will show a histogram.
+
+Part 2. Do the same as the above, but only for log entries which are marked DIAGNOSTIC.
+
+Ensure that you handle relevant errors.
+ 
+Java File Handling,
+
+Regular Expressions,
+
+Exceptions
+ 
+140 
+
+(star) Querying Sametime Chat Transcripts.
+
+INTERNAL This program assumes that you log your Sametime chat transcripts
+(to make it easier, you should log it to C: drive).
+
+Write a program that scans your Sametime chat transcripts directory and builds some kind of
+data structure to help with the following scenarios which help the user to search these transcripts.
+
+First, the user will enter a search term.
+
+If the user enters a date, list all the people who you've chatted with on that date (in order of time first chatted).
+
+if the user enters a person name (e.g. "Prasenjeet Dutta") or a substring of a person name (e.g. "Dutt"), it should
+show you all the names of people you've ever chatted to matching that name (if there's more than one),
+and allow you to choose a person.
+Then it should show all the dates you've ever chatted with that person, in descending order.
+
+Chat transcripts are INTERNAL so work on this problem only on HSBC computers!
+ 
+Java File Handling,
+
+Regular Expressions,
+
+Exceptions
+ 
