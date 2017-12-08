@@ -1,0 +1,20 @@
+package Assignment;
+
+/**
+ * Created by 44020369 on 10/19/2017.
+
+ 4=4*3*2*1
+  =4
+ */
+
+public class factorial {
+
+    public int fact(int num){
+
+        if (num == 0 ){
+            return 1;
+        }
+        num = num * fact(num-1);
+        return num;
+    }
+}
