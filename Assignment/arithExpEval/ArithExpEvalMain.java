@@ -1,7 +1,4 @@
-/*
-* This code is working as of now with the precedence check.
-* I am not able to find a correct algorithm to apply precedence as of now. So will do it when i think of a easy algo
-*/
+
 package assignment.arithExpEval;
 
 public class ArithExpEvalMain {
@@ -12,11 +9,10 @@ public class ArithExpEvalMain {
         InputExp InputExp = new InputExp();
         String inputVal = InputExp.InputExp();
 
-        EvaluateExp Evaluate = new EvaluateExp();
-        System.out.println(" Result of the expression is : " + Evaluate.eval(inputVal));
+        //this evaluates the complete expression
+        EvaluateExpFinal Evaluate = new EvaluateExpFinal();
 
-
-
+        System.out.println(" \nRESULT OF THE EXPRESSION IS : " + Evaluate.eval(inputVal));
 
     }
 }
