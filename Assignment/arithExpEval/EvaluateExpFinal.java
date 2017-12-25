@@ -61,9 +61,9 @@ public class EvaluateExpFinal {
             return "*";
         if (op1 == 2)
             return "/";
-        if (op1 == 3)
-            return "+";
         if (op1 == 4)
+            return "+";
+        if (op1 == 3)
             return "-";
 
         return "Invalid operator";
