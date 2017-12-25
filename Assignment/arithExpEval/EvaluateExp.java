@@ -1,12 +1,5 @@
-/*
-* (star) Simple Arithmetic Expression Evaluator: Write a program that accepts from the user an arithmetic expression with the following constraints:
-•the user will only enter positive integers
-•the user will only do these operations: + - * / (i.e., + = add, - = subtract, * = multiply, / = divide)
-•The precedence of * and / are higher than + and - (as is the case in traditional school maths)
-•The * and / operators have the same precedence, + and - have the same precedence
-•for simplicity, all numbers and operators will be separated by exactly one space
-
-* */
+//please ignore this program as this does not consider precendence.
+//instead a different logic is written in EvaluateExpFinal.
 
 package assignment.arithExpEval;
 
@@ -57,7 +50,6 @@ public class EvaluateExp {
 
         /*for (int i=0; i<token.length;i++){
             //System.out.print(token[i] + "\t" );
-
             if (token[i] == " "){
                 System.out.println("\nIt is a white space, need not to add into a array");
                 continue;
@@ -65,10 +57,7 @@ public class EvaluateExp {
             else if (token[i] >= '0' && token[i].toString()<='9'){
                 //ystem.out.println("It is a number, need to store as an integer array");
                 inputIntVal.add((int) Integer.parseInt(String.valueOf(token[i])));
-
             }
-
-
         }*/
         System.out.println("\nEntered expression is " + inputVal);
         System.out.println("\nInteger array is ..");
@@ -81,11 +70,6 @@ public class EvaluateExp {
         while (iterator.hasNext()){
             //System.out.println(++count + " Value of count : " + count );
 
-
-
-            try {
-                //System.out.println("Niraj - iterator " + iterator.next());
-                //System.out.println("Niraj - iterator " + iterator.next());
                 try {
                     if (iterator.nextIndex() == 0 ) {
                         res = evalExp(iterator.next(), iterator.next(), inputStrVal.get(count));
@@ -101,10 +85,6 @@ public class EvaluateExp {
                     res = 0;
                     System.out.println("Cannot fetch a correct expression. Please checks your expression .");
                 }
-
-            }catch (NoSuchElementException e) {
-                System.out.println(e.getMessage() + " from the loop");
-            }
         }
 
 //        try {
@@ -115,7 +95,7 @@ public class EvaluateExp {
 //            System.out.println("Cannot fetch a correct expression. Please checks your expression .");
 //        }
 
-            //int res = 0;
+        //int res = 0;
         return  res;
     }
 
@@ -142,7 +122,7 @@ public class EvaluateExp {
                     res = (no1 - no2);
                     break;
                 default:
-                    System.out.println("Invalind expression passed.");
+                    System.out.println("Invalid expression passed.");
                     res = 0;
                     break;
 
